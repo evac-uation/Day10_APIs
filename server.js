@@ -22,4 +22,4 @@ app.post('/api/messages', (req, res) => {
 
 app.listen(PORT, () => console.log ('Server: https://localhost:${PORT}'));
 
-//Reminder: node server.js in terminal to start it running
+//Reminder: type node server.js in terminal to start it running
