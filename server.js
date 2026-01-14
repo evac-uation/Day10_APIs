@@ -20,6 +20,6 @@ app.post('/api/messages', (req, res) => {
     res.status(201).send({message:"Received!"});
 });
 
-app.listen(PORT, () => console.log ('Server: https://localhost:${PORT}'));
+app.listen(PORT, () => console.log ('Server: http://localhost:3000'));
 
 //Reminder: type node server.js in terminal to start it running

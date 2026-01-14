@@ -38,7 +38,7 @@
 
         //Loop through the data and create table rows as a string
         //We use the 'index' to know which item to delete later
-        data.forEach((iten, index) => {
+        data.forEach((item, index) => {
             const rowHtml = `
                 <tr>
                     <td>${item.name}</td>
@@ -49,7 +49,7 @@
                 </tr>
                 `;
                 // Add this string to the table body contents
-                tableBody.innerHTML += rowHTML;
+                tableBody.innerHTML += rowHtml;
         });
     }
 
