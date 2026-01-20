@@ -28,34 +28,32 @@
             const response = await fetch('/api/messages');
             //Convert the response to usable JSON
             const data = await response.json();
-        
 
-        // Grab the table body element
-        const tableBody = document.getElementById('dataTable');
+            // Grab the table body element
+            const tableBody = document.getElementById('dataTable');
 
-        //Reset the table content
-        tableBody.innerHTML - '';
+            //Reset the table content
+            tableBody.innerHTML = '';
 
-        //Loop through the data and create table rows as a string
-        //We use the 'index' to know which item to delete later
-        data.forEach((item, index) => {
-            const rowHtml = `
-                <tr>
-                    <td>${item.name}</td>
-                    <td>${item.message}</td>
-                    <td>
-                        <button onclick = "deleteMessage(${index})">Delete</button>
-                    </td>
-                </tr>
-                `;
-                // Add this string to the table body contents
-                tableBody.innerHTML += rowHtml;
+            //Loop through the data and create table rows as a string
+            //We use the 'index' to know which item to delete later
+            data.forEach((item, index) => {
+                const rowHtml = `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.message}</td>
+                        <td>
+                            <button onclick="deleteMessage(${index})">Delete</button>
+                        </td>
+                    </tr>
+                    `;
+                    // Add this string to the table body contents
+                    tableBody.innerHTML += rowHtml;
         });
     }
 
     // 2. The function to delete an item
     async function deleteMessage(index) {
-        // Send a DELETE request to the specific URL (e.g., /api/messages/2)
         await fetch(`/api/messages/${index}`, {
             method: 'DELETE'
         });
