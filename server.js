@@ -17,8 +17,13 @@ app.post('/api/messages', (req, res) => {
         message: req.body.message
     };
 
-    if (newMessage.name.length == 0 || newMessage.message.length < 5) {
-        res.status(400).json('');
+    if (newMessage.name.length == 0) {
+        res.status(400).json('Empty Name');
+        return;
+    }
+
+    if (newMessage.message.length < 5) {
+        res.status(400).json('Too short message');
         return;
     }
 
